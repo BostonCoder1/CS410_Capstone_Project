@@ -1,6 +1,10 @@
 # CLI
 CLI tool for CS410 project
 
+## Installation
+
+    pip install -i https://test.pypi.org/simple/ compbiolab-CLI
+
 ## Usage
 
 ### Comparing protein sequences
