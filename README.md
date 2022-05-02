@@ -7,9 +7,13 @@ CLI tool for CS410 project
 
 Find the distance between fingerprints of two protein families
 
-    compare [-h] [-n1 FIRST_FAMILY] [-n2 SECOND_FAMILY] [-names SHOW_NAMES_BOOL] [-m DISTANCE_METRIC] [-p P_NORM] [-nl1 NL1] [-nl2 NL2]
+    compare [-h] [-names SHOW_NAMES_BOOL] [-n1 FIRST_FAMILY] [-n2 SECOND_FAMILY] [-nl1 NL1] [-nl2 NL2] [-m DISTANCE_METRIC] [-p P_NORM]
 
 #### Arguments
+
+* `-names`
+
+    Boolean, Show available protein family names
 
 * `-n1`
 
@@ -19,18 +23,6 @@ Find the distance between fingerprints of two protein families
 
     Second family's name
 
-* `-names`
-
-    Boolean, Show available protein family names
-
-* `-m`
-
-    [optional] Distance metric. Default: euclidean
-
-* `-p`
-
-    [optional] Scalar, The p-norm to apply for Minkowski, weighted and unweighted. Default: 2
-
 * `-nl1`
 
     [optional] The file name of the first new latent space. Provide a new protein family latent space to compare it with one of the existing protein families or with the second new latent space. The file should contain 30 floats, each float in a separate line.
@@ -39,18 +31,6 @@ Find the distance between fingerprints of two protein families
 
     [optional] The file name of the second new latent space. Provide a new protein family latent space to compare it with one of the existing protein families or with the first new latent space. The file should contain 30 floats, each float in a separate line.
 
-### Searching
-
-Find the closest family to a new protein sequence
-
-    search [-h] [-names SHOW_NAMES_BOOL] [-m DISTANCE_METRIC] [-p P_NORM] [-nl1 NL1] [-nl2 NL2] [-ns NS]
-
-#### Arguments
-
-* `-names`
-
-    Boolean, Show available protein family names
-
 * `-m`
 
     [optional] Distance metric. Default: euclidean
@@ -58,6 +38,18 @@ Find the closest family to a new protein sequence
 * `-p`
 
     [optional] Scalar, The p-norm to apply for Minkowski, weighted and unweighted. Default: 2
+
+### Searching
+
+Find the closest family to a new protein sequence
+
+    search [-h] [-names SHOW_NAMES_BOOL] [-nl1 NL1] [-nl2 NL2] [-m DISTANCE_METRIC] [-p P_NORM]
+
+#### Arguments
+
+* `-names`
+
+    Boolean, Show available protein family names
 
 * `-nl1`
 
@@ -67,10 +59,14 @@ Find the closest family to a new protein sequence
 
     The file name of a new latent space. Provide a new protein family latent space. The closest protein family to this new latent space will be shown.
 
-* `-ns`
+* `-m`
 
-    The name of the file containing a protein sequence. Provide a protein sequence to get the closest protein family for this sequence.
+    [optional] Distance metric. Default: euclidean
 
+* `-p`
+
+    [optional] Scalar, The p-norm to apply for Minkowski, weighted and unweighted. Default: 2
+	
 ## Available metrics
 
 *euclidean (default)*, minkowski, cityblock, sqeuclidean, cosine, correlation, hamming, jaccard, chebyshev, canberra, braycurtis, yule, dice, kulsinski, rogerstanimoto, russellrao, sokalmichener, sokalsneath
@@ -99,6 +95,3 @@ You can find the closest protein family to first_new_latent_example.txt in cosin
 
     search -nl1 first_new_latent_example.txt -m cosine
     
-You can find the closest family to a new protein sequence (for example new_sequence_example.txt) by running:
-
-    search -ns new_sequence_example.txt
