@@ -1,17 +1,17 @@
 # CLI
 CompBioLabCLI
 
-CLI tool for CS410 project(Combiolab)
+CLI tool for CS410 project (compbiolab)
 
-1.3 Overview
+### Overview
 Our goal for this project is to read a new input sequence and find the protein family in which it belongs to by comparing it with existing sequences in the database. We can also read two different inputs sequences and compare them to find the similarities between the two. The program can be downloaded from PyPI (Python Package Index) via the Instructions below and will have a Command Line Interface.
 
-1: Find the distance between fingerprints of two protein families.
-2: Find the closest family to a new protein sequence.
+1. Find the distance between fingerprints of two protein families.
+2. Find the closest family to a new protein sequence.
 
 ## Installation
 
-    pip install -i https://test.pypi.org/simple/ compbiolab-CLI
+    pip install compbiolab-CLI
 
 ## Usage
 
@@ -67,7 +67,7 @@ Find the distance between fingerprints of two protein families
 
 Find the closest family to a new protein sequence
 
-    search [-h] [-names SHOW_NAMES_BOOL] [-m DISTANCE_METRIC] [-p P_NORM] [-nl1 NL1] [-nl2 NL2] [-ns NS] [-out OUTPUT_FILE] [-of OUTPUT_FORMAT] [-om OUTPUT_MODE]
+    search [-h] [-names SHOW_NAMES_BOOL] [-m DISTANCE_METRIC] [-p P_NORM] [-nl1 NL1] [-nl2 NL2] [-out OUTPUT_FILE] [-of OUTPUT_FORMAT] [-om OUTPUT_MODE]
 
 #### Arguments
 
@@ -82,10 +82,6 @@ Find the closest family to a new protein sequence
 * `-nl2`
 
     The file name of a new latent space. Provide a new protein family latent space. The closest protein family to this new latent space will be shown.
-
-* `-ns`
-
-    The name of the file containing a protein sequence. Provide a protein sequence to get the closest protein family for this sequence.
 
 * `-m`
 
@@ -135,6 +131,3 @@ You can find the closest protein family to first_new_latent_example.txt in cosin
 
     search -nl1 first_new_latent_example.txt -m cosine
     
-You can find the closest family to a new protein sequence (for example new_sequence_example.txt) by running:
-
-    search -ns new_sequence_example.txt
