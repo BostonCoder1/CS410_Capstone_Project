@@ -30,9 +30,7 @@ The program can be downloaded from PyPI (the Python Package Index), and it has a
 
 ## Installation
 
-    1. Install Python 3.7 or above. (https://www.python.org/downloads/)  
-    2. Open up Command Prompt. (Windows Key + R → Type cmd → Enter)
-    3. In Command Prompt, type pip install compbiolab-CLI.
+    pip install compbiolab-CLI
 
 ## Usage
 
